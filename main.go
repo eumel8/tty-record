@@ -15,6 +15,8 @@ import (
 	"golang.org/x/term"
 )
 
+var sigwinch syscall.Signal
+
 type WindowSizeT struct {
 	rows, cols int
 }
@@ -40,7 +42,7 @@ func main() {
 	flag.Parse()
 
 	winChangedSig := make(chan os.Signal, 1)
-	signal.Notify(winChangedSig, syscall.SIGWINCH)
+	signal.Notify(winChangedSig, sigwinch)
 
 	scriptWriter := &scriptWriter{
 		outFileName: *outputName,
