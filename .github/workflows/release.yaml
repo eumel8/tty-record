@@ -25,4 +25,4 @@ jobs:
         retry: 10
         sha256sum: true
         overwrite: true
-        pre_command: go mod tidy
+        pre_command: go install github.com/go-bindata/go-bindata/...@latest && go mod tidy
