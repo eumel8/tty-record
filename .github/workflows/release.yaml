@@ -25,5 +25,5 @@ jobs:
         retry: 10
         sha256sum: true
         overwrite: true
-        pre_command: go mod tidy && go-bindata -o bindata.go templates/output_footer.html.in templates/output_header.html.in asciinema-player.min.js asciinema-player.css
+        pre_command: go install github.com/go-bindata/go-bindata/...@latest && go mod tidy && go-bindata -o bindata.go templates/output_footer.html.in templates/output_header.html.in asciinema-player.min.js asciinema-player.css
         extra_files: LICENSE README.md
