@@ -7,4 +7,7 @@ require (
 	golang.org/x/term v0.16.0
 )
 
-require golang.org/x/sys v0.16.0 // indirect
+require (
+	github.com/go-bindata/go-bindata v3.1.2+incompatible // indirect
+	golang.org/x/sys v0.16.0 // indirect
+)
