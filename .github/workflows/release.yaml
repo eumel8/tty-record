@@ -3,17 +3,17 @@ on:
   release:
     types: [created]
 
+name: release tty-record
 jobs:
-  release-linux-amd64:
-    name: release linux/amd64
+  release-linux-darwin:
+    name: release linux/darwin
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        goos: [linux,windows, darwin]
+        goos: [linux, darwin]
         goarch: [amd64, arm64]
         exclude:
           - goarch: arm64
-            goos: windows
     steps:
     - uses: actions/checkout@v4
     - uses: wangyoucao577/go-release-action@v1.52
